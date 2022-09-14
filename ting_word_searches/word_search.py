@@ -36,4 +36,3 @@ def search_by_word(word, instance):
     else:
         print(files_list)
         return files_list
-
