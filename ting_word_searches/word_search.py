@@ -2,7 +2,9 @@ def exists_word(word, instance):
     """Aqui irá sua implementação"""
     lines_numbers = []
     files_list = []
-    for file in instance.data:
+
+    for index in range(len(instance)):
+        file = instance.search(index)
         for i, line in enumerate(file["linhas_do_arquivo"]):
             if word.lower() in line.lower():
                 lines_numbers.append({"linha": i + 1})
@@ -22,7 +24,9 @@ def search_by_word(word, instance):
     """Aqui irá sua implementação"""
     lines_numbers = []
     files_list = []
-    for file in instance.data:
+
+    for index in range(len(instance)):
+        file = instance.search(index)
         for i, line in enumerate(file["linhas_do_arquivo"]):
             if word.lower() in line.lower():
                 lines_numbers.append({"linha": i + 1, "conteudo": line})
